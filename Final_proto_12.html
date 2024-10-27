@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panoptic - Student Stress Management</title>
+    <style>
+        /* Basic Reset */
+        * { 
+            box-sizing: border-box; 
+            margin: 0; 
+            padding: 0; 
+            font-family: Arial, sans-serif; 
+        }
+        body { 
+            background-color: #f0f8ff; 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            padding: 20px; 
+        }
+        #header { 
+            text-align: center; 
+            margin-bottom: 20px; 
+        }
+        #header h1 { 
+            color: #4b9cd3; 
+            font-size: 2.5em; 
+        }
+        #navbar { 
+            display: flex; 
+            justify-content: center; 
+            gap: 15px; 
+            margin: 10px 0; 
+        }
+        #navbar a { 
+            text-decoration: none; 
+            color: #4b9cd3; 
+            font-weight: bold; 
+            transition: color 0.3s; 
+        }
+        #navbar a:hover { 
+            color: #0066cc; 
+        }
+        #main-content { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); 
+            gap: 20px; 
+            max-width: 1000px; 
+            width: 100%; 
+            margin-bottom: 20px; 
+        }
+        .section { 
+            background-color: #e6f7ff; 
+            border-radius: 8px; 
+            padding: 20px; 
+            text-align: center; 
+            transition: transform 0.3s; 
+            cursor: pointer; 
+        }
+        .section:hover { 
+            transform: scale(1.05); 
+        }
+        .content-section { 
+            display: none; 
+        }
+        img { 
+            max-width: 80px; 
+            height: auto; 
+            margin-bottom: 10px; 
+        }
+        button { 
+            background-color: #4b9cd3; 
+            color: white; 
+            border: none; 
+            padding: 10px 15px; 
+            cursor: pointer; 
+            border-radius: 5px; 
+            transition: background-color 0.3s; 
+            margin-top: 10px; 
+        }
+        button:hover { 
+            background-color: #0073e6; 
+        }
+        #about, #testimonials { 
+            max-width: 800px; 
+            margin: 20px 0; 
+            padding: 20px; 
+            background-color: #e6f7ff; 
+            border-radius: 8px; 
+            text-align: center; 
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <h1>Panoptic</h1>
+    </div>
+    <div id="navbar">
+        <a href="#" onclick="showSection('activities')">Activities Input</a>
+        <a href="#" onclick="showSection('workshops')">Workshops</a>
+        <a href="#" onclick="showSection('vr')">VR Experience</a>
+        <a href="#" onclick="showSection('progress')">Progress Tracking</a>
+        <a href="#" onclick="showSection('about')">About Us</a>
+        <a href="#" onclick="showSection('testimonials')">Testimonials</a>
+    </div>
+    <div id="main-content">
+        <div class="section" onclick="showSection('activities')">
+            <img src="To_do_list.png" alt="Activities">
+            <h3>Activities Input</h3>
+            <p>Log your academic schedule, extracurriculars, and family responsibilities.</p>
+        </div>
+        <div class="section" onclick="showSection('workshops')">
+            <img src=" Workshops.png" alt="Workshops">
+            <h3>Workshops</h3>
+            <p>Join workshops on stress and time management tailored to your activities.</p>
+        </div>
+        <div class="section" onclick="showSection('vr')">
+            <img src="VR_Image.jpeg" alt="VR Experience">
+            <h3>VR Experience</h3>
+            <p>Engage in immersive sessions that teach relaxation, stress management, and visualization techniques for your goals.</p>
+        </div>
+        <div class="section" onclick="showSection('progress')">
+            <img src="Progress tracker.jpeg" alt="Progress Tracking">
+            <h3>Progress Tracking</h3>
+            <p>Monitor your stress management journey and visualize your progress.</p>
+        </div>
+    </div>
+
+    <div id="activities" class="content-section">
+        <h2>Activities Input</h2>
+        <p>Input your schedule, extracurriculars, and family responsibilities to track your time management.</p>
+        <button onclick="hideAllSections()">Go Back</button>
+    </div>
+    <div id="workshops" class="content-section">
+        <h2>Workshops</h2>
+        <p>Join different workshops on (Mainly stress management and effective time management) to learn skills aligned with your activities.</p>
+        <button onclick="hideAllSections()">Go Back</button>
+    </div>
+    <div id="vr" class="content-section">
+        <h2>VR Experience</h2>
+        <p>Engage in immersive sessions that help you practice skills you learned in the workshops, and visualize your academic, personal, and professional goals.</p>
+        <button onclick="hideAllSections()">Go Back</button>
+    </div>
+    <div id="progress" class="content-section">
+        <h2>Progress Tracking</h2>
+        <p>Track your goals and stress performance to monitor your progress effectively.</p>
+        <button onclick="hideAllSections()">Go Back</button>
+    </div>
+
+    <div id="about" class="content-section">
+        <h2>About Us</h2>
+        <p>At Panoptic, we are dedicated to empowering students to manage their stress effectively and thrive in both their academic and personal lives. Our team consists of experienced educators, mental health professionals, and tech innovators who believe in the potential of every student.</p>
+        <p>We offer a variety of tailored programs, workshops, and innovative tools designed to help students develop effective stress management strategies. Our mission is to create a supportive environment where students can explore their goals, enhance their well-being, and build resilience.</p>
+        <p>Join us on the journey to a balanced and fulfilling student life, where stress doesn't hold you back but becomes a catalyst for growth and achievement.</p>
+        <button onclick="hideAllSections()">Go Back</button>
+    </div>
+
+    <div id="testimonials" class="content-section">
+        <h2>Testimonials</h2>
+        <p>"Panoptic has completely transformed my approach to managing stress. The workshops were incredibly insightful, and I feel more in control of my life!" - Alex T.</p>
+        <p>"The VR sessions were a game changer for me. They helped me visualize my goals and keep my stress in check, making studying so much more manageable!" - Jamie L.</p>
+        <p>"I love how easy it is to track my activities and see my progress. Panoptic has given me the tools I need to succeed!" - Sam K.</p>
+        <p>"The support and resources provided by Panoptic have been invaluable. I’ve learned techniques that I can apply in all areas of my life." - Chris M.</p>
+        <button onclick="hideAllSections()">Go Back</button>
+    </div>
+
+    <script>
+        function showSection(section) {
+            hideAllSections();
+            document.getElementById(section).style.display = 'block';
+        }
+
+        function hideAllSections() {
+            const sections = document.getElementsByClassName('content-section');
+            for (let section of sections) {
+                section.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
